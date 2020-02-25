@@ -15,12 +15,21 @@ int main(){
   auto itr=mp.begin();
   for (int i=0;i<num;i++){
     col[i]=itr->second;
-    cout<<col[i]<<endl;
+    //cout<<i<<" "<<itr->first<<" "<<col[i]<<endl;
+    itr++;
   }
-  cout<<mp.size();
-  
-
+  int ans=0;
+  sort(col,col+num);
+  int i=0;
+  while(num>K){
+    ans=ans+col[i];
+    num--;
+    i++;
+  }
+  cout<<ans<<endl;
+  return 0;
 }
 
   
+       
        
