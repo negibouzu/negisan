@@ -13,14 +13,15 @@ int main() {
     cin>>W[i]>>V[i];
   }
   
-  for (int i=0;i<110;i++){
-    for(int sum_W=0;sum_W<100010;sum_W++){
+  for (int i=0;i<N;i++){
+    for(int sum_W=0;sum_W<maxW+1;sum_W++){
       if(sum_W-W[i]>=0){
-        dp[i+1][sum_W-W[i]]=max(dp[i+1][sum_W],dp[i][sum_W]+V[i]);
+        dp[i+1][sum_W]=max(dp[i+1][sum_W],dp[i][sum_W-W[i]]+V[i]);
       }
       dp[i+1][sum_W]=max(dp[i+1][sum_W],dp[i][sum_W]);
     }
   }
+  //cout<<N<<" "<<maxW<<endl;
   cout<<dp[N][maxW]<<endl;
   return 0;
 }
@@ -28,6 +29,12 @@ int main() {
     
   
     
+
+  
+                       
+                   
+
+
 
   
                        
