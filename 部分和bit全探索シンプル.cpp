@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+// N個のデータＡｉからいくつかを選んで合計をＷにできるかを判定
+// 選び出すところをbit全探索で行い総当たりで判定している
+// 要素数がそんなに大きくない場合に可能
 
 int main() {
     // 入力
