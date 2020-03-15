@@ -1,0 +1,42 @@
+//逆ポーランド記法　文字列を数字に変換
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int a[1000000];
+
+
+int main() {
+    string s;
+    long long a, b, n, ans;
+    stack <long long > st;
+    while (cin >> s) {
+        if (s[0] == '+') {
+            a = st.top(); st.pop();
+            b = st.top(); st.pop();
+            st.push(a + b);
+        }
+        else if (s[0] == '-') {
+            a = st.top(); st.pop();
+            b = st.top(); st.pop();
+            st.push(b - a);
+        }
+        else if (s[0] == '*') {
+            a = st.top(); st.pop();
+            b = st.top(); st.pop();
+            st.push(a * b);
+        }
+        else {
+            n = s[0] - '0';
+            for (int j = 1; j < s.size(); j++) n = n * 10 + (s[j] - '0');
+            st.push(n);
+        }
+    }
+    cout << st.top() << endl;
+
+    return 0;
+}
+
+
+        
