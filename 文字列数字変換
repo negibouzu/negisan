@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//文字列で与えられた数字を整数型のnに変換する
+//各桁の数字をvec[i]に収納する
+
+int main(){
+  string N;
+  cin >> N;
+  int KETA=N.length();
+  vector <int> vec(KETA);
+  int n;
+  n=N.at(0)-'0';
+  vec[0]=n;
+  for (int i=1;i<KETA;i++){
+    n=n*10+(N.at(i)-'0');
+    vec[i]=N.at(i)-'0';
+  }
