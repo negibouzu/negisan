@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n,q;
+  cin >>n>>q;
+  queue <pair<string,int>> Q;
+
+  pair<string,int> a;
+  for(int i=0;i<n;i++){
+    cin>>a.first>>a.second;
+    Q.push(a);
+  }
+  
+  int temp=0;
+  while(!Q.empty()){
+    pair<string,int> x ;
+    x=Q.front();
+    if(x.second<=q){
+      cout<<x.first<<" "<<temp+x.second<<endl;
+      temp=temp+x.second;
+      Q.pop();
+    }
+    else {
+      x.second=x.second-q;
+      temp=temp+q;
+      Q.pop();
+      Q.push(x);
+    }
+  }
+  return 0;
+}
+
+ 
