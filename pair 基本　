@@ -1,0 +1,20 @@
+//ABC041C
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long long N;
+  cin>>N;
+  int temp=0;
+  vector<pair <int,int>> T(N);
+  for (int i=0;i<N;i++){
+    cin>>temp;
+    T[i]=make_pair(temp,i);
+  }
+  sort(T.begin(),T.end());
+  for (int i=N-1;i>-1;i--){
+    cout<<T[i].second+1<<endl;
+  }
+  return 0;
+}
