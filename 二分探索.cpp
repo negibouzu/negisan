@@ -1,6 +1,9 @@
 bool question(int m, int K){
     return A[m] >= K;
 }
+// ngをleft okをrightとした方がわかりやすいかも
+//　okになるもっとも小さいものを返す
+
 
 int binarySearch(int K){
     int ng = -1;
