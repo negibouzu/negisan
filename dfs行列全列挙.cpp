@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//２文字目以降が出力対象の配列になる
+
 int N,M;
 void dfs(vector<int>A){
     if(A.size()==N+1){
