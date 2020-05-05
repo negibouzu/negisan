@@ -5,7 +5,7 @@ static const int INF=10000000;
 int n;
 int M[100][100];
 
-int color[100];
+int color[100];//未処理を0 候補を1 確定を2　スタートは1で始める
 int d[100];
 
 void dijkstra(){
