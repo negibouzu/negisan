@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+template< typename T = long long>
+T binomial(int64_t N, int64_t K) {
+  if(K < 0 || N < K) return 0;
+  T ret = 1;
+  for(T i = 1; i <= K; ++i) {
+    ret *= N--;
+    ret /= i;
+  }
+  return ret;
+}
+
+int main(void){
+    long long N,K;
+    cin>>N>>K;
+    cout<<binomial(N,K);
+    return 0;
+}
