@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,n) for(int i=0;i<n;i++)
+typedef long long ll; 
+ 
+int nex[100010][26];
+
+int main(){
+  int n,k;
+  cin>>n>>k;
+  string s;
+  cin>>s;
+  
+  //前計算　現在地以降の何番目に'a'+jがでてくるか
+  rep(i,26) nex[n][i]=n;
+  for(int i=n-1;i>=0;i--){
+    rep(j,26){
+      if ((int)(s[i]-'a')==j){
+        nex[i][j]=i;
+      }
+      else{
+        nex[i][j]= nex[i+1][j];
+      }
+    }
+  }
+  //貪欲
+  rep(i,n){
+    if(k==0) break;
+    rep(j,26){
+      if(s[i]=='a'+j){
+      cout<<s[i];
+      k--;
+      break;
+      }
+      if(n-nex[i][j]>=k) break;
+    }
+  }
+  cout<<endl; 
+  return 0;
+}
+
+
+  
